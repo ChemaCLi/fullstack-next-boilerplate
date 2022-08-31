@@ -1,6 +1,6 @@
 import { prisma } from "../prisma-client"
 
-export default async function handleer(req, res) {
+export default async function handleer (req, res) {
   try {
     switch (req.method) {
       case 'POST':

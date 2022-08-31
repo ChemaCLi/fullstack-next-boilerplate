@@ -1,6 +1,8 @@
 import { prisma } from "../prisma-client"
+import { NextApiRequest, NextApiResponse, } from "next"
+import { IUser, INextAPIError } from '@/typeDefs'
 
-export default async function handleer(req, res) {
+export default async function handler (req: NextApiRequest, res: NextApiResponse<IUser | { error: string | unknown }>) {
   try {
     switch (req.method) {
       case 'PATCH':
@@ -13,13 +15,14 @@ export default async function handleer(req, res) {
         return res.status(405).json({ error: "Method not allowed in this path" })
     }
   } catch (e) {
-    res.status(500).json({ error: e?.message || e })
+    const err = e as INextAPIError
+    res.status(500).json({ error: err?.message || e })
   } finally {
     prisma.$disconnect()
   }
 }
 
-const getUser = async (req, res) => {
+const getUser = async (req: NextApiRequest, res: NextApiResponse): Promise<IUser | null> => {
   const { query: { id } } = req
 
   const user = await prisma.user.findUnique({ where: { id: Number(id) } })
@@ -28,7 +31,7 @@ const getUser = async (req, res) => {
   return user
 }
 
-const updateUser = async (req, res) => {
+const updateUser = async (req: NextApiRequest, res: NextApiResponse): Promise<IUser> => {
   const {
     body: { email, name },
     query: { id }
@@ -46,7 +49,7 @@ const updateUser = async (req, res) => {
 }
 
 
-const deleteUser = async (req, res) => {
+const deleteUser = async (req: NextApiRequest, res: NextApiResponse): Promise<IUser> => {
   const {
     query: { id },
   } = req
