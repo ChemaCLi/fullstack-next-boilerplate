@@ -1,11 +1,11 @@
 import { prisma } from "../prisma-client"
 
-export default async function handleer (req, res) {
+export default async function handler (req, res) {
   try {
     switch (req.method) {
-      case 'POST':
+      case "POST":
         return createUser(req, res)
-      case 'GET':
+      case "GET":
         return getUsers(req, res)
       default:
         return res.status(405).json({ error: "Method not allowed in this path" })
@@ -25,13 +25,13 @@ const getUsers = async (req, res) => {
 
 const createUser = async (req, res) => {
   const {
-    body: { email, name },
+    body: { email, name }
   } = req
 
   const newUser = await prisma.user.create({
     data: {
       name,
-      email,
+      email
     }
   })
   res.status(201).json({ data: newUser })

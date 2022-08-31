@@ -1,15 +1,16 @@
 import { prisma } from "../prisma-client"
-import { NextApiRequest, NextApiResponse, } from "next"
-import { IUser, INextAPIError } from '@/typeDefs'
+import { NextApiRequest, NextApiResponse } from "next"
+import { IUser, INextAPIError } from "@/types"
 
-export default async function handler (req: NextApiRequest, res: NextApiResponse<IUser | { error: string | unknown }>) {
+export default async function handler (req: NextApiRequest, res: NextApiResponse<IUser | { error: string | unknown }>):
+  Promise<IUser | { error: string | unknown } | undefined | null | void> {
   try {
     switch (req.method) {
-      case 'PATCH':
+      case "PATCH":
         return updateUser(req, res)
-      case 'DELETE':
+      case "DELETE":
         return deleteUser(req, res)
-      case 'GET':
+      case "GET":
         return getUser(req, res)
       default:
         return res.status(405).json({ error: "Method not allowed in this path" })
@@ -41,7 +42,7 @@ const updateUser = async (req: NextApiRequest, res: NextApiResponse): Promise<IU
     where: { id: Number(id) },
     data: {
       name,
-      email,
+      email
     }
   })
   res.status(202).json({ data: updatedUser })
@@ -51,7 +52,7 @@ const updateUser = async (req: NextApiRequest, res: NextApiResponse): Promise<IU
 
 const deleteUser = async (req: NextApiRequest, res: NextApiResponse): Promise<IUser> => {
   const {
-    query: { id },
+    query: { id }
   } = req
 
   const userId = Number(id)
