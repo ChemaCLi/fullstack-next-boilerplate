@@ -1,4 +1,5 @@
 import { isUndefined } from "../../shared/utils/is-undefined"
+import { urlFormatIsValid } from "../../shared/utils/url-format-is-valid"
 
 type MediaType = "IMAGE" | "VIDEO" | "NOT_SPECIFIED"
 
@@ -34,7 +35,7 @@ export class Hobby implements Required<HobbyProperties> {
   }
 
   setMediaUrl(mediaUrl: HobbyProperties["mediaUrl"]) {
-    if (!mediaUrl.match(/(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/))
+    if (!urlFormatIsValid(mediaUrl))
       throw new Error("Domain: The URL format is not valid")
 
     this.mediaUrl = mediaUrl
