@@ -18,6 +18,8 @@ export class Hobby implements Required<HobbyProperties> {
   public mediaType: MediaType
   public description: string
 
+  private SUPPORTED_MEDIA_TYPES: MediaType[] = ["IMAGE", "VIDEO", "NOT_SPECIFIED"]
+
   constructor(properties: HobbyProperties) {
     !isUndefined(properties.id) && this.setId(properties.id)
     !isUndefined(properties.name) && this.setName(properties.name)
@@ -42,7 +44,7 @@ export class Hobby implements Required<HobbyProperties> {
   }
 
   setMediaType(mediaType: HobbyProperties["mediaType"]) {
-    if (!["IMAGE", "VIDEO"].includes(mediaType))
+    if (!this.SUPPORTED_MEDIA_TYPES.includes(mediaType))
       throw new Error("Domain: the mediaType value is not supported")
 
     this.mediaType = mediaType
