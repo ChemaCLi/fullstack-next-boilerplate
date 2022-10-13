@@ -1,7 +1,7 @@
 import React from "react"
 import 'antd/dist/antd.css';
-import { AddButton } from "../client/components/shared"
 import { UserAddOutlined } from "@ant-design/icons"
+import { AddButton } from "../src/client/ui/components/shared"
 
 export default {
   title: "Buttons/AddButton",

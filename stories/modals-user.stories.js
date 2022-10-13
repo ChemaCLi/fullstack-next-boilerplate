@@ -1,7 +1,7 @@
 import React  from "react"
 import 'antd/dist/antd.css';
-import { ServiceLayerProvider } from "../client/contexts"
-import { UserModal } from "../client/components/users/user-modal"
+import { ServiceLayerProvider } from "../src/client/ui/contexts"
+import { UserModal } from "../src/client/ui/components/users/user-modal"
 
 export default {
   title: "Modals/User",

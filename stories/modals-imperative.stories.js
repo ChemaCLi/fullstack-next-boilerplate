@@ -1,8 +1,8 @@
 import React, { useRef } from "react"
 import 'antd/dist/antd.css';
-import { ImperativeModal, ServiceLayerProvider } from "../client/contexts"
-import { AddButton } from "../client/components/shared"
-import { UserModal } from "../client/components/users/user-modal"
+import { AddButton } from "../src/client/ui/components/shared"
+import { UserModal } from "../src/client/ui/components/users/user-modal"
+import { ImperativeModal, ServiceLayerProvider } from "../src/client/ui/contexts"
 
 export default {
   title: "Modals/Imperative",
