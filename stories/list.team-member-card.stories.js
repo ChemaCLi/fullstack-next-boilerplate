@@ -4,7 +4,7 @@ import { TeamMemberCard } from "../src/client/ui/components/shared"
 import profilePic from "../public/assets/user-avatar-guillermo-rauch.png"
 
 export default {
-  title: "List Items/TeamMemberCard",
+  title: "List/TeamMemberCard",
   component: TeamMemberCard
 }
 
