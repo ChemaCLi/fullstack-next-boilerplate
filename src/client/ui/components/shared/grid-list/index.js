@@ -7,7 +7,7 @@ export const GridList = ({
   dataSource = []
 }) => {
   return (
-    <div className={styles.gallery}>
+    <div className={styles.GridListContainer}>
       {dataSource.map((item, idx) => {
         const component = renderItem(item, idx)
         const key = keyExtractor(item)
