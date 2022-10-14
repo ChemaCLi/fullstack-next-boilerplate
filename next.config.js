@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["cdx.solo.to", "cdx.solo.to"]
+    domains: ["cdx.solo.to", "en.wikipedia.org"]
   }
 }
 
