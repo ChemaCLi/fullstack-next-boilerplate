@@ -1,5 +1,6 @@
 export * from "./buttons"
+export * from "./grid-list"
+export * from "./team-member-card"
 export * from "../users/users-list"
 export * from "../users/user-modal"
 export * from "./content-container"
-export * from "./team-member-card"
