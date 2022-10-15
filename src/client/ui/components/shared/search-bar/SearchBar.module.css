@@ -56,7 +56,5 @@
 }
 
 .SearchBar__Button:active {
-  box-shadow:
-          inset 4px 4px 1rem #000000,
-          inset -.4px -.4px 1rem #000000;
+  box-shadow: inset 4px 4px 2rem #000000;
 }
