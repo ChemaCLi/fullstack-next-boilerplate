@@ -12,6 +12,7 @@ export const ResponsiveGridList = args => {
     <GridList
       dataSource={args.dataSource}
       keyExtractor={user => user?.id}
+      itemDimensions={{ width: "150px", height: "150px" }}
       renderItem={user => (
         <TeamMemberCard
           unoptimized // hack to support remote images on storybook
