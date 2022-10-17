@@ -1,4 +1,5 @@
 .Card {
+  overflow: hidden;
   background-color: #ffffff;
   width: 150px;
   height: 150px;
