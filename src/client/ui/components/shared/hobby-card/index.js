@@ -1,18 +1,25 @@
 import { Card } from "../card"
 import Image from "next/image"
-import { ActionButtons } from "../buttons/action-buttons";
+import { ActionButtons } from "../buttons/action-buttons"
 
-export const HobbyCard = () => {
+export const HobbyCard = ({
+  id = "",
+  navigateTo = "",
+  onClick,
+  name = "",
+  imageUrl
+}) => {
   return (
     <div
       style={{ width: "200px" }}
       className="HobbyCard">
       <Card
+        onClick={() => onClick && onClick({ id })}
         style={{ width: "200px", height: "150px", padding: "0px" }}>
         <div style={{ width: "200px", height: "150px" }}>
           <Image
             unoptimized
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ryan_Dahl.jpg/440px-Ryan_Dahl.jpg"
+            src={imageUrl}
             objectFit="cover"
             width="200px"
             height="150px" />
@@ -22,9 +29,9 @@ export const HobbyCard = () => {
         <a
           target="_blank"
           rel="noreferrer noopener"
-          href="https://google.com">
+          href={navigateTo}>
           <strong className="HobbyCard__Title">
-            Skate
+            {name}
           </strong>
         </a>
         <div className="OptionsContainer">
