@@ -1,11 +1,7 @@
 import { Card } from "../card"
 import Image from "next/image"
 import styles from "./HobbyCard.module.css"
-import {
-  EyeOutlined,
-  FormOutlined,
-  DeleteOutlined
-} from "@ant-design/icons"
+import { ActionButtons } from "../buttons/action-buttons";
 
 export const HobbyCard = () => {
   return (
@@ -21,25 +17,16 @@ export const HobbyCard = () => {
             height="150px" />
         </div>
       </Card>
-      <div style={{
-        padding: "8px",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-between"
-      }}>
-        <a target="_blank" rel="noreferrer noopener" href="https://google.com"><strong className={styles.HobbyCard__Title}>Skate</strong></a>
-        <div style={{ display: "flex", flexDirection: "row", gap: "8px" }}>
-          <EyeOutlined
-            style={{ display: "block" }}
-            className={styles.HobbyCard__IconButton} />
-          <FormOutlined
-            style={{ display: "block" }}
-            className={styles.HobbyCard__IconButton} />
-          <DeleteOutlined
-            style={{ display: "block" }}
-            className={styles.HobbyCard__IconDeleteButton} />
-        </div>
+      <div className={styles.HobbyCard__TitleContainer}>
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          href="https://google.com">
+          <strong className={styles.HobbyCard__Title}>
+            Skate
+          </strong>
+        </a>
+        <ActionButtons />
       </div>
     </div>
   )

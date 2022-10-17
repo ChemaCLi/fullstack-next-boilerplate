@@ -6,12 +6,10 @@
   color: #0070f3;
 }
 
-.HobbyCard__IconButton:hover {
-  color: #0070f3;
-  cursor: pointer;
-}
-
-.HobbyCard__IconDeleteButton:hover {
-  color: #df0101;
-  cursor: pointer;
+.HobbyCard__TitleContainer {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }

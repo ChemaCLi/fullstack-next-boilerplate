@@ -1,0 +1,9 @@
+.ActionButton:hover {
+  color: #0070f3;
+  cursor: pointer;
+}
+
+.DeleteButton:hover {
+  color: #df0101;
+  cursor: pointer;
+}
