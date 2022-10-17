@@ -1,0 +1,17 @@
+.HobbyCard__Title {
+  color: #353535;
+}
+
+.HobbyCard__Title:hover {
+  color: #0070f3;
+}
+
+.HobbyCard__IconButton:hover {
+  color: #0070f3;
+  cursor: pointer;
+}
+
+.HobbyCard__IconDeleteButton:hover {
+  color: #df0101;
+  cursor: pointer;
+}
