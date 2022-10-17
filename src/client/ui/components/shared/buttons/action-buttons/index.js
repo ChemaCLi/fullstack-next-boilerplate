@@ -1,4 +1,3 @@
-import styles from "./ActionButtons.module.css"
 import {
   EyeOutlined,
   FormOutlined,
@@ -15,13 +14,13 @@ export const ActionButtons = () => {
     }}>
       <EyeOutlined
         style={{ display: "block" }}
-        className={styles.ActionButton} />
+        className="ActionButton" />
       <FormOutlined
         style={{ display: "block" }}
-        className={styles.ActionButton} />
+        className="ActionButton" />
       <DeleteOutlined
         style={{ display: "block" }}
-        className={styles.DeleteButton} />
+        className="DeleteButton" />
     </div>
   )
 }

@@ -1,3 +1,6 @@
+
+import "../styles/components/action-button.css"
+import "../styles/components/hobby-card.css"
 import { GridList, HobbyCard } from "../src/client/ui/components/shared";
 
 export default {
