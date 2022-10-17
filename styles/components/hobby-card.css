@@ -1,0 +1,23 @@
+.OptionsContainer {
+  display: none;
+}
+
+.HobbyCard:hover > .HobbyCard__TitleContainer > .OptionsContainer {
+  display: inline-block;
+}
+
+.HobbyCard__Title {
+  color: #353535;
+}
+
+.HobbyCard__Title:hover {
+  color: #0070f3;
+}
+
+.HobbyCard__TitleContainer {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
