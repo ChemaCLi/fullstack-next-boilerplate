@@ -13,6 +13,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@bigheads/core": "^0.3.3",
     "@prisma/client": "^4.2.1",
     "antd": "^4.22.8",
