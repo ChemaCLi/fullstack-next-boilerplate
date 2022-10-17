@@ -8,6 +8,10 @@
 
 .HobbyCard__Title {
   color: #353535;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
 .HobbyCard__Title:hover {

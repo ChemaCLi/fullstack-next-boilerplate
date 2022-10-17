@@ -27,10 +27,11 @@ export const HobbyCard = ({
       </Card>
       <div className="HobbyCard__TitleContainer">
         <a
+          className="HobbyCard__Title"
           target="_blank"
           rel="noreferrer noopener"
           href={navigateTo}>
-          <strong className="HobbyCard__Title">
+          <strong>
             {name}
           </strong>
         </a>

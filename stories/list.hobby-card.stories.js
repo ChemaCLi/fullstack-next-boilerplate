@@ -34,7 +34,7 @@ export const HobbiesList = args => {
         { id: "04", name: "Programming", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/b/be/X-4_with_Female_Computer_-_GPN-2000-001932.jpg" },
         { id: "05", name: "To Be beautiful", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/b/be/X-4_with_Female_Computer_-_GPN-2000-001932.jpg" },
         { id: "06", name: "Large Breaking Hobby Naming", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/b/be/X-4_with_Female_Computer_-_GPN-2000-001932.jpg" },
-        { id: "07", name: "Drawing", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/b/be/X-4_with_Female_Computer_-_GPN-2000-001932.jpg" },
+        { id: "07", name: "Very Large Breaking Hobby Naming Large Breaking Hobby Naming", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/b/be/X-4_with_Female_Computer_-_GPN-2000-001932.jpg" },
         { id: "08", name: "Drawing", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/b/be/X-4_with_Female_Computer_-_GPN-2000-001932.jpg" },
         { id: "09", name: "Drawing", imageUrl: "https://upload.wikimedia.org/wikipedia/commons/b/be/X-4_with_Female_Computer_-_GPN-2000-001932.jpg" }
       ]} />
