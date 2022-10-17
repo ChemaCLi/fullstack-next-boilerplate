@@ -4,10 +4,16 @@ import styles from "./GridList.module.css"
 export const GridList = ({
   renderItem = () => null,
   keyExtractor = () => null,
-  dataSource = []
+  dataSource = [],
+  itemDimensions = { width: "150px", height: "150px" }
 }) => {
   return (
-    <div className={styles.GridListContainer}>
+    <div
+      style={{
+        gridAutoRows: itemDimensions.height,
+        gridTemplateColumns: `repeat(auto-fill, minmax(${itemDimensions.width}, 1fr))`
+    }}
+      className={styles.GridListContainer}>
       {dataSource.map((item, idx) => {
         const component = renderItem(item, idx)
         const key = keyExtractor(item)

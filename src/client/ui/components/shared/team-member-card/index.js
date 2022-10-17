@@ -1,6 +1,7 @@
 
 import styles from "./TeamMemberCard.module.css"
 import Image from "next/image";
+import { Card } from "../card";
 
 export const TeamMemberCard = ({
   imageUrl,
@@ -11,9 +12,16 @@ export const TeamMemberCard = ({
   user
 }) => {
   return (
-    <div
-      onClick={onClick && onClick(user)}
-      className={styles.TeamMemberCard__Container}>
+    <Card
+      onClick={() => onClick && onClick(user)}
+      style={{
+        width: "150px",
+        height: "150px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
+    }}>
       <div className={styles.TeamMemberCard__AvatarContainer}>
         <Image
           src={imageUrl}
@@ -29,6 +37,6 @@ export const TeamMemberCard = ({
       <div className={styles.TeamMemberCard__JobTitle}>
         {jobTitle}
       </div>
-    </div>
+    </Card>
   )
 }
