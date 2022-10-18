@@ -1,4 +1,5 @@
 export * from "./card"
+export * from "./avatar"
 export * from "./buttons"
 export * from "./grid-list"
 export * from "./search-bar"
