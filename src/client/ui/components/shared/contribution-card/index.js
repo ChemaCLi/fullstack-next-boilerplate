@@ -6,17 +6,17 @@ import { ActionButtons } from "../buttons/action-buttons"
 import { toReadableDate } from "../../../utils/to-readable-date"
 
 export const ContributionCard = ({
+  onEdit,
+  onDelete,
+  onShowDetail,
+  type,
   imageUrl,
-  unoptimized = false,
-  authorPhotoUrl,
   authorName,
+  articleName,
+  authorPhotoUrl,
   publicationDate,
   originalPostUrl,
-  articleName,
-  onDelete,
-  onEdit,
-  onShowDetail,
-  type
+  unoptimized = false,
 }) => {
   const readablePublicationDate = publicationDate
     ? toReadableDate(publicationDate)
