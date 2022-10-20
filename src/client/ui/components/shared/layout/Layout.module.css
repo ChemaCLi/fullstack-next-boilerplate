@@ -15,7 +15,6 @@
     width: 72px;
     height: 100%;
     background: #D4B17D;
-    font-size: 32px;
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
 }
@@ -27,4 +26,15 @@
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
     background-color: #FFFAF1;
+}
+
+.Layout__SideBar__Icons {
+    font-size: 32px;
+    color: #555555;
+    transition: 0.2s all ease;
+}
+
+.Layout__SideBar__Icons:hover {
+    cursor: pointer;
+    color: #000000;
 }
