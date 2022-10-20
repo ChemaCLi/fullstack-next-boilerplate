@@ -1,7 +1,23 @@
 import { SearchOutlined, UserOutlined, BookOutlined } from "@ant-design/icons"
 import styles from "./Layout.module.css"
+import { useRouter } from "next/router"
 
 export const Layout = ({ children }) => {
+    const router = useRouter()
+
+    const onSearch = () => {
+        router.push("/search")
+    }
+
+    const onGoToUsers = () => {
+        router.push("/users")
+
+    }
+
+    const onGoToContributions = () => {
+        router.push("/contributions")
+    }
+
     return (
         <div className={styles.Layout__MainContainer}>
             <div className={styles.Layout__SideBar}>
