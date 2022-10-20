@@ -1,0 +1,53 @@
+.ContributionCard {
+  width: fit-content;
+}
+
+.ContributionCard__InfoContainer {
+  padding: 8px;
+}
+
+.ContributionCard__AuthorBadge {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+}
+
+.ContributionCard__PostInfo {
+  color: #474747;
+  display: block;
+  margin-left: 8px;
+}
+
+.ContributionCard__ArticleHeading {
+  margin-Left: 48px;
+  margin-bottom: 8px;
+}
+
+.ContributionCard__ArticleOptions {
+  display: none;
+}
+
+.ContributionCard:hover .ContributionCard__ArticleOptions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ContributionCard__ArticleTitle {
+  margin: 0;
+  height: 52px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-Line-Clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.ContributionCard__ArticleTitle:hover {
+  color: #015cc4;
+}
+
+.ContributionCard__ArticleType {
+  margin: 0;
+  color: #7c7c7c;
+}
+
+
