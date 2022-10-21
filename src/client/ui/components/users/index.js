@@ -1,9 +1,11 @@
 import { useRef } from "react"
-import { ImperativeModal } from "../../contexts"
-import { AddButton, ContentContainer } from "../shared"
+import { Tooltip, Button } from "antd"
+import { PlusOutlined } from "@ant-design/icons"
 import { UserModal } from "./user-modal"
-import { UsersList } from "./users-list"
+import { ImperativeModal } from "../../contexts"
+import { GridList, Searchbar, TeamMemberCard } from "../shared"
 import { useService, useUserActions, useServiceLayer } from "../../hooks"
+
 
 export const UsersManagementPageContent = () => {
   const modalRef = useRef()
@@ -38,16 +40,23 @@ export const UsersManagementPageContent = () => {
           onCreateUser: handleOnCreateUser,
           onEditUser: handleOnEditUser
         }} />
-      <ContentContainer>
-        <AddButton
-          label="Agregar usuario"
-          onClick={() => modalRef.current?.openModal()} />
-        <UsersList
-          users={users}
-          loading={loading}
-          onSelectItem={user => modalRef.current?.openModal(user)}
-          onDeleteItem={id => handleOnDeleteUser({ id })} />
-      </ContentContainer>
+      <div style={{ display: "flex", flexDirection: "row", gap: "16px", width: "100%", alignItems: "center" }}>
+        <div style={{ maxWidth: "600px", width: "100%" }}><Searchbar placeholder="Buscar usuario" buttonLabel="Buscar" /></div>
+        <Tooltip title="Agregar usuario">
+          <Button shape="circle" icon={<PlusOutlined />} size={"large"} />
+        </Tooltip>
+      </div>
+      <GridList
+        dataSource={users || []}
+        keyExtractor={user => user?.id}
+        itemDimensions={{ width: "150px", height: "150px" }}
+        renderItem={user => (
+          <TeamMemberCard
+            unoptimized // hack to support remote images on storybook
+            imageUrl={user.photo}
+            name={user.name}
+            jobTitle={user.title} />
+        )} />
     </>
   )
 }
