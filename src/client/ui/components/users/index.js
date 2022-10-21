@@ -43,7 +43,7 @@ export const UsersManagementPageContent = () => {
       <div style={{ display: "flex", flexDirection: "row", gap: "16px", width: "100%", alignItems: "center" }}>
         <div style={{ maxWidth: "600px", width: "100%" }}><Searchbar placeholder="Buscar usuario" buttonLabel="Buscar" /></div>
         <Tooltip title="Agregar usuario">
-          <Button shape="circle" icon={<PlusOutlined />} size={"large"} />
+          <Button shape="circle" icon={<PlusOutlined />} size={"large"} onClick={() => modalRef.current.openModal()} />
         </Tooltip>
       </div>
       <GridList
@@ -52,7 +52,6 @@ export const UsersManagementPageContent = () => {
         itemDimensions={{ width: "150px", height: "150px" }}
         renderItem={user => (
           <TeamMemberCard
-            unoptimized // hack to support remote images on storybook
             imageUrl={user.photo}
             name={user.name}
             jobTitle={user.title} />
