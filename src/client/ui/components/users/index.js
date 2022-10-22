@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import { Tooltip, Button } from "antd"
 import { PlusOutlined } from "@ant-design/icons"
+import styles from "./Users.module.css"
 import { UserModal } from "./user-modal"
 import { ImperativeModal } from "../../contexts"
 import { GridList, Searchbar, TeamMemberCard } from "../shared"
@@ -40,10 +41,18 @@ export const UsersManagementPageContent = () => {
           onCreateUser: handleOnCreateUser,
           onEditUser: handleOnEditUser
         }} />
-      <div style={{ display: "flex", flexDirection: "row", gap: "16px", width: "100%", alignItems: "center" }}>
-        <div style={{ maxWidth: "600px", width: "100%" }}><Searchbar placeholder="Buscar usuario" buttonLabel="Buscar" /></div>
+      <div className={styles.Users__TopContainer}>
+        <div className={styles.Users__Searchbar__Container}>
+          <Searchbar
+            buttonLabel="Buscar"
+            placeholder="Buscar usuario" />
+        </div>
         <Tooltip title="Agregar usuario">
-          <Button shape="circle" icon={<PlusOutlined />} size={"large"} onClick={() => modalRef.current.openModal()} />
+          <Button
+            shape="circle"
+            size={"large"}
+            icon={<PlusOutlined />}
+            onClick={() => modalRef.current.openModal()} />
         </Tooltip>
       </div>
       <GridList
