@@ -1,9 +1,12 @@
 import { useRef } from "react"
-import { ImperativeModal } from "../../contexts"
-import { AddButton, ContentContainer } from "../shared"
+import { Tooltip, Button } from "antd"
+import { PlusOutlined } from "@ant-design/icons"
+import styles from "./Users.module.css"
 import { UserModal } from "./user-modal"
-import { UsersList } from "./users-list"
+import { ImperativeModal } from "../../contexts"
+import { GridList, Searchbar, TeamMemberCard } from "../shared"
 import { useService, useUserActions, useServiceLayer } from "../../hooks"
+
 
 export const UsersManagementPageContent = () => {
   const modalRef = useRef()
@@ -14,7 +17,6 @@ export const UsersManagementPageContent = () => {
   const {
     onEditUser,
     onCreateUser,
-    onDeleteUser,
   } = useUserActions({ userService })
 
   const handleOnCreateUser = async ({ name, email }) => {
@@ -23,10 +25,6 @@ export const UsersManagementPageContent = () => {
 
   const handleOnEditUser = async ({ id, name, email }) => {
     await onEditUser({ id, name, email, onCompleted: refetch })
-  }
-
-  const handleOnDeleteUser = async ({ id }) => {
-    await onDeleteUser({ id, onCompleted: refetch })
   }
 
   return (
@@ -38,16 +36,31 @@ export const UsersManagementPageContent = () => {
           onCreateUser: handleOnCreateUser,
           onEditUser: handleOnEditUser
         }} />
-      <ContentContainer>
-        <AddButton
-          label="Agregar usuario"
-          onClick={() => modalRef.current?.openModal()} />
-        <UsersList
-          users={users}
-          loading={loading}
-          onSelectItem={user => modalRef.current?.openModal(user)}
-          onDeleteItem={id => handleOnDeleteUser({ id })} />
-      </ContentContainer>
+      <div className={styles.Users__TopContainer}>
+        <div className={styles.Users__Searchbar__Container}>
+          <Searchbar
+            buttonLabel="Buscar"
+            placeholder="Buscar usuario" />
+        </div>
+        <Tooltip title="Agregar usuario">
+          <Button
+            shape="circle"
+            size={"large"}
+            icon={<PlusOutlined />}
+            onClick={() => modalRef.current.openModal()} />
+        </Tooltip>
+      </div>
+      <GridList
+        loading={loading}
+        dataSource={users || []}
+        keyExtractor={user => user?.id}
+        itemDimensions={{ width: "150px", height: "150px" }}
+        renderItem={user => (
+          <TeamMemberCard
+            imageUrl={user.photo}
+            name={user.name}
+            jobTitle={user.title} />
+        )} />
     </>
   )
 }

@@ -1,0 +1,12 @@
+.Users__TopContainer {
+    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.Users__Searchbar__Container {
+    width: 100%;
+    max-width: 600px;
+}
