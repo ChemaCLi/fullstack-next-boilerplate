@@ -28,6 +28,7 @@ const createUser = async (req, res) => {
   const userRepository = prismaUserRepository(prisma)
   const newUser = await userService(userRepository).createUser({ email, name })
   res.status(201).json({ data: newUser })
+  return newUser
 }
 
 const getUsers = async (req, res) => {
