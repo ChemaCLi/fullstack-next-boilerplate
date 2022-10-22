@@ -17,7 +17,6 @@ export const UsersManagementPageContent = () => {
   const {
     onEditUser,
     onCreateUser,
-    onDeleteUser,
   } = useUserActions({ userService })
 
   const handleOnCreateUser = async ({ name, email }) => {
@@ -26,10 +25,6 @@ export const UsersManagementPageContent = () => {
 
   const handleOnEditUser = async ({ id, name, email }) => {
     await onEditUser({ id, name, email, onCompleted: refetch })
-  }
-
-  const handleOnDeleteUser = async ({ id }) => {
-    await onDeleteUser({ id, onCompleted: refetch })
   }
 
   return (
@@ -56,6 +51,7 @@ export const UsersManagementPageContent = () => {
         </Tooltip>
       </div>
       <GridList
+        loading={loading}
         dataSource={users || []}
         keyExtractor={user => user?.id}
         itemDimensions={{ width: "150px", height: "150px" }}
