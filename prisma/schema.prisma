@@ -8,7 +8,25 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
+  id    String  @id @default(uuid())
   name  String? @db.VarChar(255)
   email String  @unique @db.VarChar(255)
+}
+
+model Profile {
+  id      String   @id @default(uuid())
+  name    String?  @db.VarChar(255)
+  skills  String[] @db.VarChar(255)
+  resume  String?  @db.VarChar(255)
+  hobbies Hobby[]
+}
+
+model Hobby {
+  id          String   @id @default(uuid())
+  name        String?  @db.VarChar(255)
+  mediaUrl    String?  @db.VarChar(255)
+  mediaType   String?  @db.VarChar(255)
+  description String?  @db.VarChar(255)
+  Profile     Profile? @relation(fields: [profileId], references: [id])
+  profileId   String?
 }
