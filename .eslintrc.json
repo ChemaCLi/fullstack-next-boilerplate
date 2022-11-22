@@ -197,7 +197,7 @@
             "format": ["PascalCase"]
           }
         ],
-        "@typescript-eslint/explicit-function-return-type": "warn",
+        "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-explicit-any": "warn",
         "import/newline-after-import": [
           "error",
