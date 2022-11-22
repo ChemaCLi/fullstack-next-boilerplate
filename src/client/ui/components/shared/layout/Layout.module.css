@@ -2,7 +2,9 @@
     width: 100vw;
     height: 100vh;
     padding: 18px;
-    background-color: #2e2e2e;
+    background-color: hsl(0, 0%, 18%);
+    background: #dfffff;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8); 
 }
 
 .Layout__Wrapper {
