@@ -18,7 +18,7 @@ export const UserModal = ({
   const { data: user, loading, reset, error } = useService(
     userService.findUserById,
     { id: selectedItem?.id },
-    { shouldFetch: selectedItem?.id && visible}
+    { shouldFetch: selectedItem?.id && visible }
   )
 
   useEffect(() => {

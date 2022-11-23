@@ -16,7 +16,7 @@ export const UsersManagementPageContent = () => {
 
   const {
     onEditUser,
-    onCreateUser,
+    onCreateUser
   } = useUserActions({ userService })
 
   const handleOnCreateUser = async ({ name, email }) => {
