@@ -14,11 +14,12 @@ model User {
 }
 
 model Profile {
-  id      String   @id @default(uuid())
-  name    String?  @db.VarChar(255)
-  skills  String[] @db.VarChar(255)
-  resume  String?  @db.VarChar(255)
-  hobbies Hobby[]
+  id       String   @id @default(uuid())
+  photoUrl String?  @db.VarChar(255) 
+  name     String?  @db.VarChar(255)
+  skills   String[] @db.VarChar(255)
+  resume   String?  @db.VarChar(255)
+  hobbies  Hobby[]
 }
 
 model Hobby {
