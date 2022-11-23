@@ -7,6 +7,7 @@ interface ProfileProperties {
   skills?: string[]
   resume?: string
   hobbies?: Hobby[]
+  photoUrl: string
 }
 
 export class Profile implements Required<ProfileProperties> {
@@ -15,6 +16,7 @@ export class Profile implements Required<ProfileProperties> {
   public resume: string
   public skills: string[]
   public hobbies: Hobby[]
+  public photoUrl: string
 
   constructor(properties: ProfileProperties) {
     !isUndefined(properties.id) && this.setId(properties.id)
@@ -22,6 +24,7 @@ export class Profile implements Required<ProfileProperties> {
     !isUndefined(properties.skills) && this.setSkills(properties.skills)
     !isUndefined(properties.resume) && this.setResume(properties.resume)
     !isUndefined(properties.hobbies) && this.setHobbies(properties.hobbies)
+    !isUndefined(properties.photoUrl) && this.setPhotoUrl(properties.photoUrl)
   }
 
   setId(id: string) {
@@ -62,5 +65,11 @@ export class Profile implements Required<ProfileProperties> {
     this.hobbies = allHobbiesAreInstances
       ? hobbies
       : hobbies.map(h => new Hobby(h))
+  }
+
+  setPhotoUrl(photoUrl: string) {
+    if (!photoUrl?.startsWith("http"))
+      throw new Error("Domain: the url should be a valid format")
+    this.photoUrl = photoUrl
   }
 }
