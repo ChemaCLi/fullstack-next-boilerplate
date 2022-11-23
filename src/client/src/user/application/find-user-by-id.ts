@@ -2,7 +2,7 @@ import { UserRepository } from "../domain/user-repository"
 import { User } from "../../../../shared-logic/user/domain/user"
 
 export interface FindUserByIdData {
-  id: number
+  id: string
 }
 
 export const findUserById = async (

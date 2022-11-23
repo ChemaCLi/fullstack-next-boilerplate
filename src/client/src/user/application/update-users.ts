@@ -1,7 +1,7 @@
 import { UserRepository } from "../domain/user-repository"
 
 export interface UpdateUserData {
-  id: number,
+  id: string,
   name: string
 }
 

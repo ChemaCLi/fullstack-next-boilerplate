@@ -1,7 +1,7 @@
 import { UserRepository } from "../domain/user-repository"
 
 export interface DeleteByIdUserData {
-  id: number
+  id: string
 }
 
 export const deleteUserBy = ({ id }: DeleteByIdUserData, userRepository: UserRepository) => {
