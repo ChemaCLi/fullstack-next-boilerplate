@@ -1,9 +1,9 @@
-export const userService = (userRepository) => {
+export const userService = userRepository => {
   const create = ({ name, email }) => {
     if (!name)
-      throw new Error(`The name is required`)
+      throw new Error("The name is required")
     if (!email)
-      throw new Error(`The email is required`)
+      throw new Error("The email is required")
 
     return userRepository.create({ name, email })
   }
@@ -32,6 +32,6 @@ export const userService = (userRepository) => {
     update,
     getAll,
     getById,
-    deleteById, 
+    deleteById
   }
 }

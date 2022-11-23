@@ -27,11 +27,11 @@ export const restUserRepository = (): UserRepository => {
 
   const searchUsers: UserRepositorySearchUsers = async ({ name }) => {
     const criteria = "?"
-    const filters = [{name}]
+    const filters = [{ name }]
     filters.forEach(filter =>
       Object
         .keys(filter)
-        .forEach(filterName => criteria + `${filterName}=${filter[filterName]}&`)
+        .forEach(filterName => `${criteria  }${filterName}=${filter[filterName]}&`)
     )
 
     const result = await axios.get(`/users${criteria}`)

@@ -9,8 +9,8 @@ import {
   accessoryMap,
   graphicsMap,
   hatMap,
-  bodyMap,
-} from '@bigheads/core'
+  bodyMap
+} from "@bigheads/core"
 
 function selectRandomKey(object) {
   return (Object.keys(object))[
@@ -62,6 +62,6 @@ export function getRandomBigheadOptions() {
     faceMaskColor,
     mask,
     faceMask,
-    lashes,
+    lashes
   }
 }

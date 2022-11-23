@@ -55,6 +55,6 @@ export const useUserActions = ({ userService }) => {
   return {
     onEditUser,
     onCreateUser,
-    onDeleteUser,
+    onDeleteUser
   }
 }

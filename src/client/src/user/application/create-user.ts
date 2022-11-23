@@ -1,6 +1,6 @@
 import { UserRepository } from "../domain/user-repository"
 import { User } from "../../../../shared-logic/user/domain/user"
-import { propertiesChecker} from "../../shared/utils/properties-checker"
+import { propertiesChecker } from "../../shared/utils/properties-checker"
 
 export interface CreateUserData {
   name: string

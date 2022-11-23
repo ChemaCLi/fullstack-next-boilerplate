@@ -1,5 +1,5 @@
 import React from "react"
-import { Spin } from 'antd';
+import { Spin } from "antd"
 import styles from "./GridList.module.css"
 
 export const GridList = ({
@@ -7,7 +7,7 @@ export const GridList = ({
   keyExtractor = () => null,
   dataSource = [],
   itemDimensions = { width: "150px", height: "150px" },
-  loading = false,
+  loading = false
 }) => {
   const renderListItems = (dataSource = []) => {
     return (

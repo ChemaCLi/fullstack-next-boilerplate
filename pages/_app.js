@@ -1,5 +1,5 @@
-import '../styles/globals.css'
-import 'antd/dist/antd.css';
+import "../styles/globals.css"
+import "antd/dist/antd.css"
 import "../styles/components/action-button.css"
 import "../styles/components/hobby-card.css"
 

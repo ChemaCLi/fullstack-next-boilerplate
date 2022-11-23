@@ -1,5 +1,5 @@
 import Image from "next/image"
-import styles from "./Avatar.module.css";
+import styles from "./Avatar.module.css"
 
 /**
  * @param imageUrl
@@ -10,7 +10,7 @@ export const Avatar = ({ imageUrl, unoptimized, size = "medium" }) => {
   const sizes = {
     large: { width: "8rem", height: "8rem" },
     medium: { width: "4rem", height: "4rem" },
-    small: { width: "40px", height: "40px" },
+    small: { width: "40px", height: "40px" }
   }
 
   const sizeStyle = sizes[size] || {}

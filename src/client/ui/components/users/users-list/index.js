@@ -6,20 +6,20 @@ import { getRandomBigheadOptions } from "../../../utils"
 /**
  * @param {object} props
  * @param {{id: string, name: string, email: string}[]} props.users
- * @returns 
+ * @returns
  */
 export const UsersList = ({
   users = [],
   loading = true,
   onSelectItem,
-  onDeleteItem,
+  onDeleteItem
 }) => {
   return (
     <List
       locale={{ emptyText: "No hay usuarios" }}
       loading={loading}
       dataSource={users ?? []}
-      renderItem={(user) =>
+      renderItem={user =>
         <List.Item
           key={user.id}
           actions={[

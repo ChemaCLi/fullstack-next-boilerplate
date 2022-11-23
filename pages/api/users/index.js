@@ -5,9 +5,9 @@ import { prismaUserRepository } from "../../../src/server/user/infrastructure/pr
 export default async function handler(req, res) {
   try {
     switch (req.method) {
-      case 'POST':
+      case "POST":
         return await createUser(req, res)
-      case 'GET':
+      case "GET":
         return await getUsers(req, res)
       default:
         return res.status(405).json({ error: "Method not allowed in this path" })

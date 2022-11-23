@@ -6,5 +6,5 @@ export const create = async ({
 }) => {
   const result = await axiosConnector.post("/users", { email, name })
   return result.data?.data
-};
+}
 

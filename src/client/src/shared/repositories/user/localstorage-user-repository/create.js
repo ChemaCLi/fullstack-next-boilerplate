@@ -1,7 +1,7 @@
 
 import {
   LocalPersistanceService
-} from "../../../services/local-persistance-service";
+} from "../../../services/local-persistance-service"
 
 export const create = ({
   name,
@@ -9,5 +9,5 @@ export const create = ({
 }) => {
   return LocalPersistanceService
     .createEntry("users", { name, email })
-};
+}
 

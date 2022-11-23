@@ -1,7 +1,7 @@
 import { UserRepository } from "../domain/user-repository"
 import { User } from "../../../shared-logic/user/domain/user"
 import { findUser, FindUserData } from "./find-user"
-import { updateUser, UpdateUserData} from "./update-user"
+import { updateUser, UpdateUserData } from "./update-user"
 import { createUser, CreateUserData } from "./create-user"
 import { searchUsersBy, SearchUsersCriteria } from "./search-users-by"
 

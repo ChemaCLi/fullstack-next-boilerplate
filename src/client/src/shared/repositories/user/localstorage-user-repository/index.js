@@ -9,5 +9,5 @@ export const localStorageUserRepository = {
   deleteById,
   getAll,
   getById,
-  update,
+  update
 }

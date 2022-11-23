@@ -11,6 +11,6 @@ export const prismaUserRepository = (prisma): UserRepository => {
     deleteUser: args => deleteUser(args, prisma),
     createUser: args => createUser(args, prisma),
     updateUser: args => updateUser(args, prisma),
-    searchUsers: args => searchUsers(args, prisma),
+    searchUsers: args => searchUsers(args, prisma)
   }
 }

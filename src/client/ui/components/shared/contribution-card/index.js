@@ -16,7 +16,7 @@ export const ContributionCard = ({
   authorPhotoUrl,
   publicationDate,
   originalPostUrl,
-  unoptimized = false,
+  unoptimized = false
 }) => {
   const readablePublicationDate = publicationDate
     ? toReadableDate(publicationDate)
@@ -46,7 +46,9 @@ export const ContributionCard = ({
             </div>
           </div>
           <div className={styles.ContributionCard__ArticleHeading}>
-            <a href={originalPostUrl} target="_blank" rel="noopener noreferrer">
+            <a
+              href={originalPostUrl} target="_blank"
+              rel="noopener noreferrer">
               <h3 className={styles.ContributionCard__ArticleTitle}>
                 {articleName}
               </h3>

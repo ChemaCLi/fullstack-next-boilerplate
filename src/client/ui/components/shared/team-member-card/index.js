@@ -1,7 +1,7 @@
 
 import styles from "./TeamMemberCard.module.css"
-import Image from "next/image";
-import { Card } from "../card";
+import Image from "next/image"
+import { Card } from "../card"
 
 export const TeamMemberCard = ({
   imageUrl,

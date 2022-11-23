@@ -1,6 +1,6 @@
 import {
   LocalPersistanceService
-} from "../../../services/local-persistance-service";
+} from "../../../services/local-persistance-service"
 
 export const update = ({
   id,
@@ -8,4 +8,4 @@ export const update = ({
   email
 }) => {
   return LocalPersistanceService.saveData("users", { name, email, id })
-};
+}

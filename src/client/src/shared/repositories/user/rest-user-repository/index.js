@@ -9,5 +9,5 @@ export const restUserRepository = {
   deleteById,
   getAll,
   getById,
-  update,
+  update
 }
